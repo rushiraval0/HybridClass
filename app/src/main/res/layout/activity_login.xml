@@ -103,20 +103,25 @@
                     android:paddingBottom="35dp">
 
                     <TextView
-                        android:id="@+id/tvUsername"
+                        android:id="@+id/tvEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="Username"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="Email"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/etUsername"
+                        android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvUsername"
+                        android:layout_below="@+id/tvEmail"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:drawableRight="@drawable/ic_person"
@@ -128,7 +133,7 @@
                         android:id="@+id/tvPassword"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/etUsername"
+                        android:layout_below="@+id/etEmail"
                         android:layout_margin="15dp"
                         android:text="Password"
                         android:textColor="@color/colorPurple"
