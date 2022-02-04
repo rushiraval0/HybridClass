@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">HybridClass</string>
+    <string name="greet">Halo!</string>
+    <string name="feedback">Saran</string>
+    <string name="feedbackBeta">Beta Feedback</string>
+    <string name="pengurus_kelas">Pengurus Kelas</string>
+    <string name="piket">Piket</string>
+    <string name="laporanPiket">Laporan Piket</string>
+    <string name="pelajaran">Pelajaran</string>
+    <string name="hintRuangan">Ruangan (contoh: 01)</string>
+    <string name="keteranganKetuntasan">Keterangan Ketuntasan</string>
+    <string name="kirim">Kirim</string>
 </resources>

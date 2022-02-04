@@ -1,12 +1,32 @@
 package com.example.hybridclass;
 
+import java.util.List;
+
 public class User {
 
     private String email;
     private String name;
     private String password;
     private String confirmPassword;
-    private String role;               // 0 = student, 1 = teacher
+    private String role;// 0 = student, 1 = teacher
+    private List<String> classList;
+
+    public User(String email, String name, String password, String confirmPassword, String role, List<String> classList) {
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        this.role = role;
+        this.classList = classList;
+    }
+
+    public List<String> getClassList() {
+        return classList;
+    }
+
+    public void setClassList(List<String> classList) {
+        this.classList = classList;
+    }
 
     public User(){
 

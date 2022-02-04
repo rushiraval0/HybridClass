@@ -184,12 +184,13 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginBottom="-70dp"
                 android:elevation="10dp">
 
                 <Button
                     android:id="@+id/btLogin"
-                    android:layout_width="match_parent"
+                    android:layout_width="220dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:background="@drawable/bt_uisquare"

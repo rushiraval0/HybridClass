@@ -3,6 +3,7 @@ package com.example.hybridclass;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -67,6 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 if(task.isSuccessful())
                                 {
                                     Toast.makeText(RegisterActivity.this,"Successful",Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(RegisterActivity.this,DashboardActivity.class));
                                 }
                                 else {
                                     Toast.makeText(RegisterActivity.this,"Failed.",Toast.LENGTH_LONG).show();

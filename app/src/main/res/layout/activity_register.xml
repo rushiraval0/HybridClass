@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="140dp">
+                android:layout_marginTop="75dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv"
@@ -214,11 +214,12 @@
 
                         <Button
                             android:id="@+id/btReg"
-                            android:layout_width="400dp"
+                            android:layout_width="220dp"
+                            android:layout_centerHorizontal="true"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/rg"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="40dp"
                             android:background="@drawable/bt_uisquare"
                             android:text="Register"
                             android:textAllCaps="false"
@@ -227,8 +228,9 @@
 
                         <TextView
                             android:id="@+id/tvLink"
+                            android:visibility="invisible"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="5dp"
                             android:layout_below="@+id/btReg"
                             android:layout_marginLeft="55dp"
                             android:layout_marginBottom="50dp"

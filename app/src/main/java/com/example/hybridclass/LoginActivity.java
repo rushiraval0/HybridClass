@@ -3,11 +3,13 @@ package com.example.hybridclass;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private Button signIn;
+    private ImageButton regBtn;
 
     private FirebaseAuth mAuth;
 
@@ -34,7 +37,15 @@ public class LoginActivity extends AppCompatActivity {
         email=(EditText) findViewById(R.id.etEmail);
         password=(EditText) findViewById(R.id.etPassword);
         signIn=(Button) findViewById(R.id.btLogin);
+        regBtn=(ImageButton) findViewById(R.id.btRegister);
         mAuth= FirebaseAuth.getInstance();
+
+        regBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+            }
+        });
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Toast.makeText(LoginActivity.this,"Successfully Logged In",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
                 }
                 else
                 {
