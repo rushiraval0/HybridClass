@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/bt_uisquare.xml" value="0.2265" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/ic_bottom_vector.xml" value="0.2265" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/ic_top_vector.xml" value="0.2265" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_main.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_register.xml" value="0.29270833333333335" />
       </map>
     </option>
