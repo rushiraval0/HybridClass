@@ -3,12 +3,12 @@ package com.example.hybridclass;
 public class Classroom {
     private String className;
     private String classCode;
-    private String creatorName;
+    private String creatorEmail;
 
-    public Classroom(String className, String classCode, String creatorName) {
+    public Classroom(String className, String classCode, String creatorEmail) {
         this.className = className;
         this.classCode = classCode;
-        this.creatorName = creatorName;
+        this.creatorEmail = creatorEmail;
     }
 
     public String getClassName() {
@@ -27,11 +27,11 @@ public class Classroom {
         this.classCode = classCode;
     }
 
-    public String getCreatorName() {
-        return creatorName;
+    public String getCreatorEmail() {
+        return creatorEmail;
     }
 
-    public void setCreatorName(String creatorName) {
-        this.creatorName = creatorName;
+    public void setCreatorEmail(String creatorName) {
+        this.creatorEmail = creatorName;
     }
 }

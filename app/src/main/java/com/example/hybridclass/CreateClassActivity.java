@@ -48,7 +48,7 @@ public class CreateClassActivity extends AppCompatActivity {
 
                 Classroom c = new Classroom(className,classCode,userName);
                 dao.add(c).addOnSuccessListener(suc-> {
-                    Toast.makeText(CreateClassActivity.this,className+" "+" "+classCode+" "+" "+userName , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateClassActivity.this,"Class Created!" , Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(er->{
                     Toast.makeText(CreateClassActivity.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
                 });
