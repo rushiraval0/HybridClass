@@ -11,11 +11,14 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CreateClassActivity extends AppCompatActivity {
 
     private EditText eClassName;
     private EditText eClassCode;
+    private EditText eClassDescription;
     private MaterialButton bCreateClass;
     private FirebaseAuth mAuth;
     private FirebaseUser firebaseUser;
@@ -27,12 +30,13 @@ public class CreateClassActivity extends AppCompatActivity {
 
         eClassName = (EditText) findViewById(R.id.create_class_name);
         eClassCode = (EditText) findViewById(R.id.class_code);
+        eClassDescription = (EditText) findViewById(R.id.class_description);
         bCreateClass = (MaterialButton) findViewById(R.id.createClassButton);
         mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid());
 
         DAOClass dao = new DAOClass();
-
-//
 
 
 
@@ -44,11 +48,14 @@ public class CreateClassActivity extends AppCompatActivity {
                 firebaseUser = mAuth.getCurrentUser();
                 String className =eClassName.getText().toString();
                 String classCode =eClassCode.getText().toString();
+                String classDescription =eClassDescription.getText().toString();
                 String userName =firebaseUser.getEmail();
 
-                Classroom c = new Classroom(className,classCode,userName);
+                Classroom c = new Classroom(className,classCode,userName,classDescription);
                 dao.add(c).addOnSuccessListener(suc-> {
-                    Toast.makeText(CreateClassActivity.this,className+" "+" "+classCode+" "+" "+userName , Toast.LENGTH_SHORT).show();
+                    DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid()).child("classList").push();
+                    mRef.setValue(classCode);
+                    Toast.makeText(CreateClassActivity.this,"Successfully Created Classroom" , Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(er->{
                     Toast.makeText(CreateClassActivity.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
                 });

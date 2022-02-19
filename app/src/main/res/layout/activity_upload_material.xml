@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:elevation="10dp"
+            android:background="@drawable/header_register" />
+
+        <TextView
+            android:id="@+id/tvUploadMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:elevation="10dp"
+            android:text="Upload Material"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:transitionName="login" />
+
+        <ImageView
+            android:id="@+id/circle2"
+            android:layout_width="182dp"
+            android:layout_height="182dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-87dp"
+            android:layout_marginBottom="-40dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/circleTes"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-50dp"
+            android:src="@drawable/circlet" />
+
+
+
+
+
+
+
+        <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:id="@+id/rlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="3dp">
+
+                        <TextView
+                            android:id="@+id/tvMaterialName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Name of Material"
+                            android:textColor="@color/colorPurple"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etMaterialName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvMaterialName"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:drawablePadding="30dp"
+                            android:inputType="textEmailAddress"
+                            android:padding="10dp" />
+
+
+
+
+
+
+
+                        <ImageView
+                            android:id="@+id/addPDF"
+                            android:layout_width="150dp"
+                            android:layout_below="@id/etMaterialName"
+                            android:layout_centerHorizontal="true"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="100dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/ic_upload"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvSelectedFile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/addPDF"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="55dp"
+                            android:layout_marginBottom="50dp"
+                            android:layout_marginTop="30dp"
+                            android:paddingTop="10dp"
+                            android:text="No File Selected"
+                            android:textColor="@color/colorPurple"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+
+
+                        <Button
+                            android:id="@+id/btUploadMaterial"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_below="@id/tvSelectedFile"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/bt_uisquare"
+                            android:text="Upload Material"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorWhite" />
+
+
+                        <TextView
+                            android:id="@+id/tvLink"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/btUploadMaterial"
+                            android:layout_marginLeft="55dp"
+                            android:layout_marginBottom="50dp"
+                            android:paddingTop="10dp"
+                            android:text="Already Member ?? Click here"
+                            android:textColor="@color/colorPurple"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+</ScrollView>

@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -20,6 +21,8 @@ public class DashboardActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     ImageView createClass;
+    MaterialButton viewClassroom;
+    ImageView uploadMaterial;
 
 
     @Override
@@ -27,11 +30,27 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        uploadMaterial = findViewById(R.id.image_view22);
+        viewClassroom = findViewById(R.id.todoB);
         userLogout = (ImageButton) findViewById(R.id.logOutB);
         email = (TextView) findViewById(R.id.textView2);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         createClass = (ImageView) findViewById(R.id.image_view1);
+
+        uploadMaterial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this,UploadMaterialActivity.class));
+            }
+        });
+
+        viewClassroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this,DisplayMyClasses.class));
+            }
+        });
 
         createClass.setOnClickListener(new View.OnClickListener() {
             @Override

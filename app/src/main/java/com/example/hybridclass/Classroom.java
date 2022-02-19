@@ -4,6 +4,26 @@ public class Classroom {
     private String className;
     private String classCode;
     private String creatorName;
+    private String classDescription;
+
+    public Classroom(){
+
+    }
+
+    public Classroom(String className, String classCode, String creatorName, String classDescription) {
+        this.className = className;
+        this.classCode = classCode;
+        this.creatorName = creatorName;
+        this.classDescription = classDescription;
+    }
+
+    public String getClassDescription() {
+        return classDescription;
+    }
+
+    public void setClassDescription(String classDescription) {
+        this.classDescription = classDescription;
+    }
 
     public Classroom(String className, String classCode, String creatorName) {
         this.className = className;
