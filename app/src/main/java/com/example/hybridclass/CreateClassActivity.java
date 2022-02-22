@@ -56,8 +56,11 @@ public class CreateClassActivity extends AppCompatActivity {
                     DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid()).child("classList").push();
                     mRef.setValue(classCode);
                     Toast.makeText(CreateClassActivity.this,"Successfully Created Classroom" , Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(CreateClassActivity.this,"Class Created!" , Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(er->{
                     Toast.makeText(CreateClassActivity.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+
                 });
 
 
