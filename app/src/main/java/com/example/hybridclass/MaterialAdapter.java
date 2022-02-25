@@ -1,6 +1,8 @@
 package com.example.hybridclass;
 
+import android.app.DownloadManager;
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.MyView
 
     Context context;
     ArrayList<FileMaterial> list;
+    DownloadManager manager;
 
 
     @NonNull
@@ -34,11 +37,16 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         FileMaterial fileMaterial = list.get(position);
-        holder.fileName.setText(fileMaterial.getMaterialName());
+        holder.fileName.setText(fileMaterial.getPdfName());
         holder.fileDownloadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+                Uri uri = Uri.parse(fileMaterial.getPdfUrl());
+                DownloadManager.Request request = new DownloadManager.Request(uri);
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+                long reference = manager.enqueue(request);
             }
         });
 

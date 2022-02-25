@@ -2,30 +2,25 @@ package com.example.hybridclass;
 
 public class FileMaterial {
 
-    private String materialName;
-    private String downloadUrl;
+    private String pdfUrl;
+    private String pdfName;
 
     public FileMaterial() {
     }
 
-    public FileMaterial(String materialName, String downloadUrl) {
-        this.materialName = materialName;
-        this.downloadUrl = downloadUrl;
+    public String getPdfUrl() {
+        return pdfUrl;
     }
 
-    public String getMaterialName() {
-        return materialName;
+    public void setPdfUrl(String pdfUrl) {
+        this.pdfUrl = pdfUrl;
     }
 
-    public void setMaterialName(String materialName) {
-        this.materialName = materialName;
+    public String getPdfName() {
+        return pdfName;
     }
 
-    public String getDownloadUrl() {
-        return downloadUrl;
-    }
-
-    public void setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
+    public void setPdfName(String pdfName) {
+        this.pdfName = pdfName;
     }
 }

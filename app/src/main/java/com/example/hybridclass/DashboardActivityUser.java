@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ public class DashboardActivityUser extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     ImageView joinClass;
+    ImageView viewMaterial;
     MaterialButton viewClassroom;
 
     @Override
@@ -33,6 +35,14 @@ public class DashboardActivityUser extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         joinClass = (ImageView) findViewById(R.id.image_view1);
+        viewMaterial = (ImageView) findViewById(R.id.image_view22);
+
+        viewMaterial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivityUser.this,DisplayMaterial.class));
+            }
+        });
 
         viewClassroom.setOnClickListener(new View.OnClickListener() {
             @Override

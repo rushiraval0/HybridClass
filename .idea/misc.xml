@@ -4,11 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/bt_uisquare.xml" value="0.2265" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/custom_button.xml" value="0.3675" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/custom_spinner.xml" value="0.3675" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/ic_bottom_vector.xml" value="0.2265" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/ic_top_vector.xml" value="0.2265" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/font/raleway.xml" value="0.396875" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attendance_dashboard_teacher.xml" value="0.25" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attendance_select.xml" value="0.25" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_create_class.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_dashboard_user.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_display_material.xml" value="0.3078125" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_display_my_classes.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_generate_qr.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_join_class.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_main.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_register.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_upload_material.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/card_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/view_file_card.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
