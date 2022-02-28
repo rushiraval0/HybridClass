@@ -1,5 +1,6 @@
 package com.example.hybridclass;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -10,8 +11,13 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class JoinClassActivity extends AppCompatActivity {
 
@@ -37,6 +43,38 @@ public class JoinClassActivity extends AppCompatActivity {
 
                 DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid()).child("classList").push();
                 mRef.setValue(eClassCode.getText().toString().trim());
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Classroom");
+
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        int count=0;
+                        for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                        {
+                            Classroom classroom = dataSnapshot.getValue(Classroom.class);
+                            try {
+                                if (classroom.getClassCode().equalsIgnoreCase(eClassCode.getText().toString().trim()) && count == 0) {
+                                    String m = dataSnapshot.getKey();
+                                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Classroom").child(m).child("StudentList").push();
+                                    ref.setValue(Objects.requireNonNull(user.getEmail()).trim());
+                                    count++;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                e.printStackTrace();
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
                 Toast.makeText(JoinClassActivity.this,"Successfully Joined Classroom" , Toast.LENGTH_SHORT).show();
             }
         });

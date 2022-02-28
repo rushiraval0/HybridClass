@@ -1,9 +1,56 @@
 package com.example.hybridclass;
 
+import java.util.List;
+
 public class Classroom {
     private String className;
     private String classCode;
     private String creatorName;
+    private int studentCount;
+    private List<String> studentList;
+
+    public List<String> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<String> studentList) {
+        this.studentList = studentList;
+    }
+
+    public Classroom(String className, String classCode, List<String> studentList, String classDescription, String creatorEmail) {
+        this.className = className;
+        this.classCode = classCode;
+        this.studentList = studentList;
+        this.classDescription = classDescription;
+        this.creatorEmail = creatorEmail;
+    }
+
+    public Classroom(String className, String classCode, int studentCount, List<String> studentList, String classDescription, String creatorEmail) {
+        this.className = className;
+        this.classCode = classCode;
+        this.studentCount = studentCount;
+        this.studentList = studentList;
+        this.classDescription = classDescription;
+        this.creatorEmail = creatorEmail;
+    }
+
+
+
+    public Classroom(String className, String classCode, int studentCount, String classDescription, String creatorEmail) {
+        this.className = className;
+        this.classCode = classCode;
+        this.studentCount = studentCount;
+        this.classDescription = classDescription;
+        this.creatorEmail = creatorEmail;
+    }
+
+    public int getStudentCount() {
+        return studentCount;
+    }
+
+    public void setStudentCount(int studentCount) {
+        this.studentCount = studentCount;
+    }
 
     private String classDescription;
 

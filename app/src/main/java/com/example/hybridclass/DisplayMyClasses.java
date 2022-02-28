@@ -71,12 +71,20 @@ public class DisplayMyClasses extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren())
                 {
                     Classroom classroom = dataSnapshot.getValue(Classroom.class);
-                    for(int i=0;i<myClass.size();i++)
-                    {
+                    for(int i=0;i<myClass.size();i++) {
                         System.out.println("In loop class :: wknd");
-                        if(classroom.getClassCode().equalsIgnoreCase(myClass.get(i)))
+                        try {
+                            if (myClass.get(i) == null) {
+                                continue;
+                            }
+
+                            if (classroom.getClassCode().equalsIgnoreCase(myClass.get(i))) {
+                                list.add(classroom);
+                            }
+                        }
+                        catch (Exception e)
                         {
-                            list.add(classroom);
+                            e.printStackTrace();
                         }
                         System.out.println("Out loop class :: wknd");
                     }
