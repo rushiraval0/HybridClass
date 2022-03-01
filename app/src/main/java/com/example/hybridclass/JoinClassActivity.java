@@ -55,9 +55,18 @@ public class JoinClassActivity extends AppCompatActivity {
                             Classroom classroom = dataSnapshot.getValue(Classroom.class);
                             try {
                                 if (classroom.getClassCode().equalsIgnoreCase(eClassCode.getText().toString().trim()) && count == 0) {
+                                    int c = classroom.getStudentCount();
+                                    c++;
+                                    classroom.setStudentCount(c);
+                                    dataSnapshot.getRef().setValue(classroom);
+
+                                    System.out.println("In loop class :: wknd");
+
                                     String m = dataSnapshot.getKey();
+
                                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Classroom").child(m).child("StudentList").push();
                                     ref.setValue(Objects.requireNonNull(user.getEmail()).trim());
+
                                     count++;
                                 }
                             }
@@ -74,6 +83,10 @@ public class JoinClassActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+//                ref = FirebaseDatabase.getInstance().getReference().child("Classroom").child(m).child("studentCount").push();
+//                ref.setValue(c);
 
                 Toast.makeText(JoinClassActivity.this,"Successfully Joined Classroom" , Toast.LENGTH_SHORT).show();
             }

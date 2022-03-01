@@ -36,6 +36,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.className.setText(classroom.getClassName());
         holder.classDescription.setText(classroom.getClassDescription());
         holder.classCode.setText(classroom.getClassCode());
+        holder.studentCount.setText((Integer.toString(classroom.getStudentCount())));
+
     }
 
     @Override
@@ -46,7 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
 
-        TextView className,classDescription,classCode;
+        TextView className,classDescription,classCode,studentCount;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -55,6 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             className = itemView.findViewById(R.id.classNameGen);
             classDescription = itemView.findViewById(R.id.classDescriptionGen);
             classCode = itemView.findViewById(R.id.classCodeGen);
+            studentCount = itemView.findViewById(R.id.studentCountGen);
         }
     }
 }

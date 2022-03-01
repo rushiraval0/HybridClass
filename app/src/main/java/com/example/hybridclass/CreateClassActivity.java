@@ -51,7 +51,9 @@ public class CreateClassActivity extends AppCompatActivity {
                 String classDescription =eClassDescription.getText().toString();
                 String userName =firebaseUser.getEmail();
 
+
                 Classroom c = new Classroom(className,classCode,userName,classDescription);
+                c.setStudentCount(0);
                 dao.add(c).addOnSuccessListener(suc-> {
                     DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid()).child("classList").push();
                     mRef.setValue(classCode);
