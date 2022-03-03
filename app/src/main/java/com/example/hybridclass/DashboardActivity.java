@@ -23,6 +23,7 @@ public class DashboardActivity extends AppCompatActivity {
     ImageView createClass;
     MaterialButton viewClassroom;
     ImageView uploadMaterial;
+    ImageView uploadNotice;
 
 
     @Override
@@ -37,6 +38,14 @@ public class DashboardActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         createClass = (ImageView) findViewById(R.id.image_view1);
+        uploadNotice = findViewById(R.id.image_view23);
+
+        uploadNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this,UploadEnoticeActivity.class));
+            }
+        });
 
         uploadMaterial.setOnClickListener(new View.OnClickListener() {
             @Override

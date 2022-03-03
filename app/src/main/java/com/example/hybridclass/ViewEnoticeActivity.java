@@ -2,18 +2,17 @@ package com.example.hybridclass;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,63 +23,65 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class DisplayMaterial extends AppCompatActivity {
+public class ViewEnoticeActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    DatabaseReference databaseReference;
-    MaterialAdapter myAdapter;
-    ArrayList<FileMaterial> list;
+    WebView webView;
     private Spinner spinner;
+    DatabaseReference databaseReference;
+    Activity activity ;
+    private ProgressDialog progDailog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_material);
+        setContentView(R.layout.activity_view_enotice);
+        webView = (WebView) findViewById(R.id.webView);
+        webView.getSettings().setSupportZoom(true);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
 
-        recyclerView = findViewById(R.id.recyclerView1);
-        databaseReference = FirebaseDatabase.getInstance().getReference("pdf");
-        recyclerView.setHasFixedSize(true);
+        activity = this;
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        list = new ArrayList<>();
+        progDailog = ProgressDialog.show(activity, "Loading","Please wait...", true);
 
-        myAdapter = new MaterialAdapter(this,list);
-        recyclerView.setAdapter(myAdapter);
-
-        spinner = findViewById(R.id.spinnerMaterialClass);
+        spinner = findViewById(R.id.spinnerNoticeStudent);
+        databaseReference = FirebaseDatabase.getInstance().getReference("notice");
         populateSpinner();
-
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                
-
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                        list.clear();
+                        webView.clearView();
                         for(DataSnapshot dataSnapshot : snapshot.getChildren())
                         {
-                            FileMaterial fileMaterial = dataSnapshot.getValue(FileMaterial.class);
-
+                            ENotice eNotice = dataSnapshot.getValue(ENotice.class);
                             System.out.println("RUSYR");
-                            System.out.println(fileMaterial);
-
-                            if(fileMaterial.getClassCode().equalsIgnoreCase(spinner.getSelectedItem().toString()))
-                                list.add(fileMaterial);
+                            System.out.println(eNotice);
+                            if(eNotice.getClassCode().equalsIgnoreCase(spinner.getSelectedItem().toString()))
+                            {
+                                System.out.println(eNotice.getNoticeUrl());
+                                webView.setWebViewClient(new WebViewClient(){
+                                    @Override
+                                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                                        progDailog.show();
+                                        view.loadUrl(url);
+                                        return true;
+                                    }
+                                    @Override
+                                    public void onPageFinished(WebView view, final String url) {
+                                        progDailog.dismiss();
+                                    }
+                                });
+                                webView.loadUrl(eNotice.getNoticeUrl());
+                            }
                         }
-
-                        myAdapter.notifyDataSetChanged();
-
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
             }
@@ -89,11 +90,14 @@ public class DisplayMaterial extends AppCompatActivity {
 
             }
         });
+
+
     }
 
-    private void populateSpinner() {
 
-        //Prepares spinner and dropdown list
+
+
+    private void populateSpinner() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         final List<String> myClassList = new ArrayList<>();
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, myClassList);
@@ -102,14 +106,13 @@ public class DisplayMaterial extends AppCompatActivity {
         DatabaseReference mRef = FirebaseDatabase.getInstance().getReference("User").child(user.getUid());
 
 
-
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int c=0;
-                for (DataSnapshot childSnapshot: snapshot.child("classList").getChildren()) {
+                int c = 0;
+                for (DataSnapshot childSnapshot : snapshot.child("classList").getChildren()) {
                     myClassList.add(childSnapshot.getValue(String.class));
-                    System.out.println("RUSY "+c+" "+myClassList);
+                    System.out.println("RUSY " + c + " " + myClassList);
                     c++;
                 }
                 adapter.notifyDataSetChanged();
@@ -120,8 +123,5 @@ public class DisplayMaterial extends AppCompatActivity {
 
             }
         });
-
     }
-
-
 }

@@ -4,6 +4,15 @@ public class FileMaterial {
 
     private String pdfUrl;
     private String pdfName;
+    private String classCode;
+
+    public String getClassCode() {
+        return classCode;
+    }
+
+    public void setClassCode(String classCode) {
+        this.classCode = classCode;
+    }
 
     public FileMaterial() {
     }

@@ -31,83 +31,47 @@
         <!--ImageVIew to display our Course Image-->
         <ImageView
             android:id="@+id/fileIcon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:contentDescription="@string/app_name"
             android:padding="5dp"
-            android:src="@drawable/file_icon" />
+            android:src="@drawable/usercheck" />
 
         <!--Text View to display Course Name-->
         <TextView
-            android:id="@+id/fileName"
+            android:id="@+id/studentName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/fileIcon"
-            android:text="File Name: "
+            android:text="Email : "
             android:textColor="@color/colorPurple"
             android:textSize="18sp"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/fileNameGen"
+            android:id="@+id/studentNameGen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text=""
+            android:layout_centerVertical="true"
             android:textColor="@color/colorPurple"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_toRightOf="@id/fileName" />
-
-        <TextView
-            android:id="@+id/fileClassCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fileName"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/fileIcon"
-            android:text="Classcode: "
-            android:textColor="@color/colorPurple"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/fileClassCodeGen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text=""
-            android:textColor="@color/colorPurple"
-            android:layout_below="@id/fileName"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_toRightOf="@id/fileName" />
+            android:layout_toRightOf="@id/studentName" />
 
         <!--Text VIew to display COurse Rating-->
         <!--Image used in present in drawable folder-->
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/fileDownloadButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fileClassCode"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/fileIcon"
-            android:drawablePadding="2dp"
-
-            android:text="Download"
-
-            android:textColor="@color/colorWhite" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

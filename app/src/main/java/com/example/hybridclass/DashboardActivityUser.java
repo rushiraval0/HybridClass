@@ -21,6 +21,7 @@ public class DashboardActivityUser extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     ImageView joinClass;
+    ImageView viewNotice;
     ImageView viewMaterial;
     MaterialButton viewClassroom;
 
@@ -30,12 +31,20 @@ public class DashboardActivityUser extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard_user);
         viewClassroom = findViewById(R.id.todoB);
 
-        userLogout = (ImageButton) findViewById(R.id.logOutB);
+        userLogout = (ImageButton) findViewById(R.id.logOutStudent);
         email = (TextView) findViewById(R.id.textView2);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         joinClass = (ImageView) findViewById(R.id.image_view1);
         viewMaterial = (ImageView) findViewById(R.id.image_view22);
+        viewNotice = (ImageView) findViewById(R.id.image_view23);
+
+        viewNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivityUser.this,ViewEnoticeActivity.class));
+            }
+        });
 
         viewMaterial.setOnClickListener(new View.OnClickListener() {
             @Override

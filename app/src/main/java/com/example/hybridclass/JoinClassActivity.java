@@ -64,7 +64,7 @@ public class JoinClassActivity extends AppCompatActivity {
 
                                     String m = dataSnapshot.getKey();
 
-                                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Classroom").child(m).child("StudentList").push();
+                                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Classroom").child(m).child("studentList").push();
                                     ref.setValue(Objects.requireNonNull(user.getEmail()).trim());
 
                                     count++;

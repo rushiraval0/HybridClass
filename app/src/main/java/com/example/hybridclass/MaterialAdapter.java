@@ -39,6 +39,7 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.MyView
 
         FileMaterial fileMaterial = list.get(position);
         holder.fileName.setText(fileMaterial.getPdfName());
+        holder.fileClassCode.setText(fileMaterial.getClassCode());
         holder.fileDownloadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +66,7 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.MyView
 
 
         TextView fileName;
+        TextView fileClassCode;
         Button fileDownloadButton;
 
 
@@ -72,6 +74,7 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.MyView
             super(itemView);
 
             fileName = itemView.findViewById(R.id.fileNameGen);
+            fileClassCode = itemView.findViewById(R.id.fileClassCodeGen);
             fileDownloadButton = itemView.findViewById(R.id.fileDownloadButton);
         }
     }

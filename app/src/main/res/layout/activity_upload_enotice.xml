@@ -21,13 +21,13 @@
             android:background="@drawable/header_register" />
 
         <TextView
-            android:id="@+id/tvUploadMaterial"
+            android:id="@+id/tvUploadNotice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:elevation="10dp"
-            android:text="Upload Material"
+            android:text="Upload E-Notice"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -76,34 +76,11 @@
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="510dp"
+
                         android:paddingBottom="3dp">
 
-                        <TextView
-                            android:id="@+id/tvMaterialName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginEnd="15dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="Name of Material"
-                            android:textColor="@color/colorPurple"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/etMaterialName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/tvMaterialName"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:drawablePadding="30dp"
-                            android:inputType="textEmailAddress"
-                            android:padding="10dp" />
 
                         <TextView
                             android:id="@+id/tvClassName"
@@ -115,14 +92,13 @@
                             android:layout_marginEnd="15dp"
                             android:layout_marginRight="15dp"
                             android:layout_marginBottom="15dp"
-                            android:layout_below="@id/etMaterialName"
                             android:text="Select Class"
                             android:textColor="@color/colorPurple"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <Spinner
-                            android:id="@+id/spinnerMaterialTeacher"
+                            android:id="@+id/spinnerNoticeTeacher"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_below="@id/tvClassName"
@@ -135,10 +111,10 @@
 
 
                         <ImageView
-                            android:id="@+id/addPDF"
+                            android:id="@+id/addNotice"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
-                            android:layout_below="@id/spinnerMaterialTeacher"
+                            android:layout_below="@id/spinnerNoticeTeacher"
                             android:layout_centerHorizontal="true"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginLeft="100dp"
@@ -146,30 +122,30 @@
                             android:src="@drawable/ic_upload" />
 
                         <TextView
-                            android:id="@+id/tvSelectedFile"
+                            android:id="@+id/tvSelectedNotice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/addPDF"
+                            android:layout_below="@+id/addNotice"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="55dp"
                             android:layout_marginTop="30dp"
                             android:layout_marginBottom="50dp"
                             android:paddingTop="10dp"
-                            android:text="No File Selected"
+                            android:text="No Notice Selected"
                             android:textColor="@color/colorPurple"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
 
                         <Button
-                            android:id="@+id/btUploadMaterial"
-                            android:layout_width="400dp"
+                            android:id="@+id/btUploadNotice"
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/tvSelectedFile"
-                            android:layout_centerVertical="true"
+                            android:layout_below="@id/tvSelectedNotice"
+                            android:layout_centerInParent="true"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/bt_uisquare"
-                            android:text="Upload Material"
+                            android:text="Upload ENotice"
                             android:textAllCaps="false"
                             android:textColor="@color/colorWhite" />
 
@@ -178,7 +154,7 @@
                             android:id="@+id/tvLink"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/btUploadMaterial"
+                            android:layout_below="@+id/btUploadNotice"
                             android:layout_marginLeft="55dp"
                             android:layout_marginBottom="50dp"
                             android:paddingTop="10dp"

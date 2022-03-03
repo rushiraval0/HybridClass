@@ -1,5 +1,6 @@
 package com.example.hybridclass;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Classroom {
@@ -7,17 +8,17 @@ public class Classroom {
     private String classCode;
     private String creatorName;
     private int studentCount;
-    private List<String> studentList;
+    private HashMap<String,String> studentList;
 
-    public List<String> getStudentList() {
+    public HashMap<String, String> getStudentList() {
         return studentList;
     }
 
-    public void setStudentList(List<String> studentList) {
+    public void setStudentList(HashMap<String, String> studentList) {
         this.studentList = studentList;
     }
 
-    public Classroom(String className, String classCode, List<String> studentList, String classDescription, String creatorEmail) {
+    public Classroom(String className, String classCode, HashMap<String, String> getStudentList, String classDescription, String creatorEmail) {
         this.className = className;
         this.classCode = classCode;
         this.studentList = studentList;
@@ -25,7 +26,7 @@ public class Classroom {
         this.creatorEmail = creatorEmail;
     }
 
-    public Classroom(String className, String classCode, int studentCount, List<String> studentList, String classDescription, String creatorEmail) {
+    public Classroom(String className, String classCode, int studentCount, HashMap<String, String> getStudentList, String classDescription, String creatorEmail) {
         this.className = className;
         this.classCode = classCode;
         this.studentCount = studentCount;
