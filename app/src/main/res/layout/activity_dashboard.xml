@@ -430,7 +430,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Give Performance"
+                    android:text="View Performance\n And Give Review"
                     android:textColor="@color/colorPurple"
                     android:textSize="14sp"
                     android:textStyle="bold"

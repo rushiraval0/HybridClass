@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Handler handler = new Handler();
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
+    String role;
     private FirebaseAuth mAuth;
 
     @Override
@@ -51,58 +53,34 @@ public class MainActivity extends AppCompatActivity {
 
         Animation animation1 = AnimationUtils.loadAnimation(this,R.anim.top_wave);
         ivTop.setAnimation(animation1);
+        if(firebaseUser != null)
+        {
+            DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid());
+
+            mDatabaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    role = snapshot.child("role").getValue().toString();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+            startHeavyProcessing();
+        }
+        else {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
 
 
         animateText("HybridClass");
-
-//        Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/demoapp-ae96a.appspot.com/o/heart_beat.gif?alt=media&token=b21dddd8-782c-457c-babd-f2e922ba172b")
-//                .asGif()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .into(iv)
-
         Animation animation2 = AnimationUtils.loadAnimation(this,R.anim.bottom_wave);
 
         ivBottom.setAnimation(animation2);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if(firebaseUser != null)
-                {
-                    DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid());
-
-                    mDatabaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String role = "";
-                            role = snapshot.child("role").getValue().toString();
-
-                            if(role.equalsIgnoreCase("teacher"))
-                            {
-                                startActivity(new Intent(MainActivity.this,DashboardActivity.class));
-                            }
-                            else
-                            {
-                                startActivity(new Intent(MainActivity.this,DashboardActivityUser.class));
-                            }
-
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-
-                }
-                else {
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                }
-                finish();
-            }
-        },4000);
-
     }
     Runnable runnable = new Runnable() {
         @Override
@@ -127,4 +105,49 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void startHeavyProcessing(){
+        new LongOperation().execute("");
+    }
+
+
+
+    private class LongOperation extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            //some heavy processing resulting in a Data String
+            for (int i = 0; i < 5; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.interrupted();
+                }
+            }
+            return "whatever result you have";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+
+            if(role.equalsIgnoreCase("teacher"))
+            {
+                Intent i = new Intent(MainActivity.this,DashboardActivity.class);
+                i.putExtra("role",role);
+                startActivity(i);
+            }
+            else
+            {
+                Intent i = new Intent(MainActivity.this,DashboardActivityUser.class);
+                i.putExtra("role",role);
+                startActivity(i);
+            }
+            finish();
+        }
+
+        @Override
+        protected void onPreExecute() {}
+
+        @Override
+        protected void onProgressUpdate(Void... values) {}
+    }
 }

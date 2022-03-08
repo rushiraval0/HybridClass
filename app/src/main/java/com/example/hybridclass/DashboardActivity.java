@@ -1,9 +1,11 @@
 package com.example.hybridclass;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,6 +15,11 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -24,6 +31,10 @@ public class DashboardActivity extends AppCompatActivity {
     MaterialButton viewClassroom;
     ImageView uploadMaterial;
     ImageView uploadNotice;
+    ImageView createQuiz;
+    ImageView viewResult;
+    boolean isAdmin = false;
+    String role="";
 
 
     @Override
@@ -39,6 +50,41 @@ public class DashboardActivity extends AppCompatActivity {
         firebaseUser = firebaseAuth.getCurrentUser();
         createClass = (ImageView) findViewById(R.id.image_view1);
         uploadNotice = findViewById(R.id.image_view23);
+        createQuiz = findViewById(R.id.image_view21);
+        viewResult = findViewById(R.id.image_view);
+
+        DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid());
+
+            mDatabaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    role = snapshot.child("role").getValue().toString();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+
+
+        viewResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardActivity.this,ViewResult.class);
+                i.putExtra("ISAdmin",isAdmin);
+                startActivity(i);
+            }
+        });
+
+        createQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this,CreateQuiz.class));
+            }
+        });
 
         uploadNotice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +113,11 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this,CreateClassActivity.class));
             }
         });
+
+        if(role.equalsIgnoreCase("teacher"))
+        {
+            isAdmin=true;
+        }
 
         email.setText(firebaseUser.getEmail());
 

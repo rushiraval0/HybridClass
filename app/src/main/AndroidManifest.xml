@@ -15,6 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HybridClass">
         <activity
+            android:name=".ViewResultDetailed"
+            android:exported="false" />
+        <activity
+            android:name=".ViewResult"
+            android:exported="false" />
+        <activity
+            android:name=".AttemptTest"
+            android:exported="false" />
+        <activity
+            android:name=".ViewQuiz"
+            android:exported="false" />
+        <activity
+            android:name=".CreateQuiz"
+            android:exported="false" />
+        <activity
             android:name=".ViewEnoticeActivity"
             android:exported="false" />
         <activity
