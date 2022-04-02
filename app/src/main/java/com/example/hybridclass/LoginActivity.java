@@ -127,57 +127,6 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         });
 
-////                    ArrayList<String> list = new ArrayList<>();
-////
-////                    mDatabaseReference.addValueEventListener(new ValueEventListener() {
-////                        @Override
-////                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-////
-////                            User u = snapshot.getValue(User.class);
-////
-////                            if(u != null)
-////                            {
-////                                if(u.getEmail()!=null)
-////                                Toast.makeText(LoginActivity.this,"Email"+u.getEmail(),Toast.LENGTH_LONG).show();
-////                            }
-////
-//////                            if(u.getEmail().equalsIgnoreCase(mAuth.getCurrentUser().getEmail().toString()))
-//////                            {
-//////                                if(u.getRole().equalsIgnoreCase("Teacher"))
-//////                                {
-                                  // startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
-////                                }
-////                                else
-////                                {
-////                                    startActivity(new Intent(LoginActivity.this,DashboardActivityUser.class));
-////                                }
-////                            }
-//
-//                        }
-//
-////                        @Override
-////                        public void onCancelled(@NonNull DatabaseError error) {
-////
-////                        }
-////                    });
-//
-//                    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-//                    DatabaseReference yourRef = rootRef.child("User");
-//                    ValueEventListener eventListener = new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(DataSnapshot dataSnapshot) {
-//                            for(DataSnapshot ds : dataSnapshot.getChildren()) {
-//
-//                                    User u = dataSnapshot.getValue(User.class);
-//                                    Log.d("TAG", u.getEmail());
-//
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(DatabaseError databaseError) {}
-//                    };
-//                    yourRef.addListenerForSingleValueEvent(eventListener);
 
 
                 }

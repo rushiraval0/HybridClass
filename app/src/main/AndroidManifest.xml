@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hybridclass">
 
+    <uses-sdk tools:overrideLibrary="com.google.firebase.firestore" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -14,6 +19,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HybridClass">
+        <activity
+            android:name=".AttendanceScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AttendanceSelect"
+            android:exported="false" />
+        <activity
+            android:name=".CodeScreen"
+            android:exported="false" />
+        <activity
+            android:name=".GenerateCode"
+            android:exported="false" />
+        <activity
+            android:name=".PersonalAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".CodeScanner"
+            android:exported="false" />
+        <activity
+            android:name=".StudentAttendanceScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ModuleSelect"
+            android:exported="false" />
+        <activity
+            android:name=".AttendanceDashboardStudent"
+            android:exported="false" />
+        <activity
+            android:name=".DetailReportStudent"
+            android:exported="false" />
+        <activity
+            android:name=".GetDetailReport"
+            android:exported="false" />
+        <activity
+            android:name=".ViewResultStudent"
+            android:exported="false" />
         <activity
             android:name=".ViewResultDetailed"
             android:exported="false" />
@@ -52,6 +93,7 @@
         <activity android:name=".JoinClassActivity" />
         <activity android:name=".DashboardActivityUser" />
         <activity android:name=".CreateClassActivity" />
+        <activity android:name=".AttendanceDashboardTeacher" />
         <activity
             android:name=".DashboardActivity"
             android:screenOrientation="portrait" />

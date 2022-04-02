@@ -79,45 +79,6 @@ public class ViewQuiz extends AppCompatActivity {
         listView.setAdapter(testAdapter);
         getQues();
 
-//        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("tests");
-//
-//
-//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//
-//                databaseReference.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                        list.clear();
-//                        for(DataSnapshot dataSnapshot : snapshot.getChildren())
-//                        {
-//                            FileMaterial fileMaterial = dataSnapshot.getValue(FileMaterial.class);
-//
-//                            System.out.println("RUSYR");
-//                            System.out.println(fileMaterial);
-//
-//                            if(fileMaterial.getClassCode().equalsIgnoreCase(spinner.getSelectedItem().toString()))
-//                                list.add(fileMaterial);
-//                        }
-//
-//                        myAdapter.notifyDataSetChanged();
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//        });
 
 
 

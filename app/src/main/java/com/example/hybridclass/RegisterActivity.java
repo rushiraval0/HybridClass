@@ -45,11 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
             RadioButton radioButton = (RadioButton) findViewById(selectedId);
 
 
-//            dao.add(user).addOnSuccessListener(suc-> {
-//                Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show();
-//            }).addOnFailureListener(er->{
-//                Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-//            });
 
             String _email = email.getText().toString();
             String _password = password.getText().toString();
@@ -61,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if(task.isSuccessful())
                     {
                         System.out.println("Successful");
-                        List<String> classCodes = Arrays.asList("hello");
+                        List<String> classCodes = Arrays.asList("");
                         User user = new User(email.getText().toString(),name.getText().toString(),password.getText().toString(),confirmPassword.getText().toString(),radioButton.getText().toString(),classCodes);
 
                         FirebaseDatabase.getInstance().getReference(User.class.getSimpleName())

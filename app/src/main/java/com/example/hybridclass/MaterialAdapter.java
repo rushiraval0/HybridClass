@@ -44,11 +44,6 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.MyView
             @Override
             public void onClick(View view) {
 
-//                manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-//                Uri uri = Uri.parse(fileMaterial.getPdfUrl());
-//                DownloadManager.Request request = new DownloadManager.Request(uri);
-//                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
-//                long reference = manager.enqueue(request);
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(fileMaterial.getPdfUrl()));
                 context.startActivity(i);

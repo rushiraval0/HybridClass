@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/RuSY/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.203125" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/attendancepercentage.xml" value="0.1965" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/border.xml" value="0.2875" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/bt_uisquare.xml" value="0.2265" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/drawable/button_circular.xml" value="0.1655" />
@@ -18,27 +19,43 @@
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/font/raleway.xml" value="0.396875" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout-v21/activity_view_quiz.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout-v21/activity_view_result_detailed.xml" value="0.3359375" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/absent_fragment.xml" value="0.1796875" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attempt_test.xml" value="0.25" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attendance_dashboard_student.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attendance_dashboard_teacher.xml" value="0.18" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attendance_screen.xml" value="0.1796875" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attendance_select.xml" value="0.25" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_attendance_select2.xml" value="0.1796875" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_code_scanner.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_code_screen.xml" value="0.1796875" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_create_class.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_create_quiz.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_dashboard_user.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_detail_report_student.xml" value="0.1671875" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_display_material.xml" value="0.3078125" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_display_my_classes.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_display_student.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_generate_code.xml" value="0.16822916666666668" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_generate_qr.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_get_detail_report.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_join_class.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_main.xml" value="0.2791666666666667" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_module_select.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_personal_attendance.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_register.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_student_attendance_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_upload_enotice.xml" value="0.3151041666666667" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_upload_material.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_view_enotice.xml" value="0.21197916666666666" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_view_quiz.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_view_result.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_view_result_detailed.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/activity_view_result_student.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/attendance_alertdialog.xml" value="0.1796875" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/attendance_rv_layout.xml" value="0.1796875" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/attended_fragment.xml" value="0.25" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/card_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/content_create_quiz.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/content_tests.xml" value="0.28804347826086957" />
@@ -46,6 +63,9 @@
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.3416666666666667" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/dialog_custom.xml" value="0.28125" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/frag_test.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/personal_absent_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/personal_attendance_rv_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/personal_attended_fragment.xml" value="0.2566532993073277" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/spinner_item.xml" value="0.3416666666666667" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/student_card.xml" value="0.22708333333333333" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/layout/test_item.xml" value="0.28804347826086957" />
@@ -54,6 +74,7 @@
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.213" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.213" />
         <entry key="..\:/Users/RuSY/Desktop/HybridClass/HybridClass/app/src/main/res/mipmap-anydpi-v26/user.xml" value="0.213" />
+        <entry key="..\:/Users/RuSY/Desktop/Study/HybridClass/HybridClass/app/src/main/res/layout/attended_fragment.xml" value="0.35104166666666664" />
       </map>
     </option>
   </component>

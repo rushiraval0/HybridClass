@@ -24,6 +24,8 @@ public class DashboardActivityUser extends AppCompatActivity {
     ImageView viewNotice;
     ImageView viewMaterial;
     ImageView attendQuiz;
+    ImageView markAttendance;
+    ImageView viewResult;
     MaterialButton viewClassroom;
 
     @Override
@@ -40,6 +42,24 @@ public class DashboardActivityUser extends AppCompatActivity {
         viewMaterial = (ImageView) findViewById(R.id.image_view22);
         viewNotice = (ImageView) findViewById(R.id.image_view23);
         attendQuiz = (ImageView) findViewById(R.id.image_view21);
+        viewResult = (ImageView) findViewById(R.id.image_view);
+        markAttendance = (ImageView) findViewById(R.id.image_view20);
+
+
+        markAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivityUser.this,AttendanceDashboardStudent.class));
+            }
+        });
+
+        viewResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivityUser.this,ViewResultStudent.class));
+            }
+        });
+
 
         attendQuiz.setOnClickListener(new View.OnClickListener() {
             @Override

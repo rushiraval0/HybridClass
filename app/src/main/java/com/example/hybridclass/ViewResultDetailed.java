@@ -46,7 +46,7 @@ public class ViewResultDetailed extends AppCompatActivity {
     private DatabaseReference myRef;
     private AVLoadingIndicatorView avLoadingIndicatorView;
     private MaterialButton button;
-//    private CardView button;
+
     private ViewResultDetailed.TestAdapter testAdapter;
     ArrayList<TestResults> result=new ArrayList<>();
     private String testName;
@@ -59,7 +59,7 @@ public class ViewResultDetailed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_result_detailed);
 
-//        button = findViewById(R.id.download_card);
+
         isAdmin = getIntent().getBooleanExtra("ISAdmin",false);
         testName=getIntent().getStringExtra("test");
         spinner = findViewById(R.id.spinnerViewQuiz);
@@ -67,8 +67,8 @@ public class ViewResultDetailed extends AppCompatActivity {
         if(!isAdmin) {
             setTitle("Result");
         }
-//        if(isAdmin)
-//            button.setVisibility(View.VISIBLE);
+
+
         Toolbar toolbar =  findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(android.R.color.black));
         setSupportActionBar(toolbar);
@@ -76,9 +76,6 @@ public class ViewResultDetailed extends AppCompatActivity {
         avLoadingIndicatorView = findViewById(R.id.loader1);
         avLoadingIndicatorView.setVisibility(View.VISIBLE);
         avLoadingIndicatorView.show();
-        /*
-        button for admin to see report in excel files
-        */
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef= database.getReference();
@@ -145,7 +142,7 @@ public class ViewResultDetailed extends AppCompatActivity {
 
 
     private void getDetails(){
-        myRef.child("Userss").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (int i=0;i<result.size();i++){
@@ -214,12 +211,11 @@ public class ViewResultDetailed extends AppCompatActivity {
 
                         if (dataList.get(position).user.getName() != null) {
 
-//                            Intent intent = new Intent(ViewResultDetailed.this, GetDetailReport.class);
-//                            intent.putExtra("USERID", dataList.get(position).userID);
-//                            intent.putExtra("DetailID", dataList.get(position).user.getName());
-//                            intent.putExtra("TestNAME", testName);
-//                            intent.putExtra("Marks", dataList.get(position).score);
-//                            startActivity(intent);
+                            Intent intent = new Intent(ViewResultDetailed.this, GetDetailReport.class);
+                            intent.putExtra("USERID", dataList.get(position).userID);
+                            intent.putExtra("TestNAME", testName);
+                            intent.putExtra("Marks", dataList.get(position).score);
+                            startActivity(intent);
                         }
                     }
                 });

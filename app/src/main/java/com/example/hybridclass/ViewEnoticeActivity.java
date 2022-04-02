@@ -69,13 +69,6 @@ public class ViewEnoticeActivity extends AppCompatActivity {
             }
         });
 
-//
-//        activity = this;
-//
-//        progDailog = ProgressDialog.show(activity, "Loading","Please wait...", true);
-//        builder = new CustomTabsIntent.Builder();
-//        customTabsIntent = builder.build();
-//        customTabsIntent.launchUrl(this, Uri.parse(""));
 
         spinner = findViewById(R.id.spinnerNoticeStudent);
         databaseReference = FirebaseDatabase.getInstance().getReference("notice");
@@ -93,20 +86,6 @@ public class ViewEnoticeActivity extends AppCompatActivity {
                             System.out.println(eNotice.getNoticeUrl());
                             if(eNotice.getClassCode().equalsIgnoreCase(spinner.getSelectedItem().toString()))
                             {
-//                                System.out.println(eNotice.getNoticeUrl());
-//                                webView.setWebViewClient(new WebViewClient(){
-//                                    @Override
-//                                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//                                        progDailog.show();
-//                                        view.loadUrl(url);
-//                                        return true;
-//                                    }
-//                                    @Override
-//                                    public void onPageFinished(WebView view, final String url) {
-//                                        progDailog.dismiss();
-//                                    }
-//                                });
-//                                webView.loadUrl(eNotice.getNoticeUrl());
                                 webView.loadUrl("https://docs.google.com/gview?embedded=true&url="+eNotice.getNoticeUrl());
                             }
                         }

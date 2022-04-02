@@ -31,6 +31,7 @@ public class DashboardActivity extends AppCompatActivity {
     MaterialButton viewClassroom;
     ImageView uploadMaterial;
     ImageView uploadNotice;
+    ImageView markAttendance;
     ImageView createQuiz;
     ImageView viewResult;
     boolean isAdmin = false;
@@ -51,6 +52,7 @@ public class DashboardActivity extends AppCompatActivity {
         createClass = (ImageView) findViewById(R.id.image_view1);
         uploadNotice = findViewById(R.id.image_view23);
         createQuiz = findViewById(R.id.image_view21);
+        markAttendance = findViewById(R.id.image_view20);
         viewResult = findViewById(R.id.image_view);
 
         DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid());
@@ -68,7 +70,13 @@ public class DashboardActivity extends AppCompatActivity {
             });
 
 
-
+        markAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardActivity.this,AttendanceDashboardTeacher.class);
+                startActivity(i);
+            }
+        });
 
         viewResult.setOnClickListener(new View.OnClickListener() {
             @Override
