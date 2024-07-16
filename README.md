@@ -1,6 +1,6 @@
 # HybridClass
 
-<img src="hybridclass-1.jpeg" alt="thumbnail" width="40%">
+<img src="hybridclass-1.jpeg" alt="thumbnail" height="40%" width="80%">
 
 HybridClass promotes a greater count of students to splurge in the field of education. It integrates the benefits of a physical classroom with the convenience of a ‘no-physical-bar’ virtual learning environment, minus the commuting hazards and expenses. It will usher in immense flexibility and sophistication in the existing learning platform structures, with the perfect blend of synchronous and asynchronous interaction. It provides a means of collaborative learning for the students.
 
